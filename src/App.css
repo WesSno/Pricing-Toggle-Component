@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font-family: font-family: "Montserrat", sans-serif;
+  --blue-50: hsl(240, 78%, 98%);
+  --gray-650: hsl(233, 13%, 49%);
+  --gray-700: hsl(232, 13%, 33%);
+  --element-bg: hsl(237, 73%, 79%), hsl(238, 63%, 64%);
+}
+
+/********************* HEADER ************************/
+header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+header .title {
+  font-size: 1.5rem;
+  color: var(--gray-700);
+}
+
+header .toggle-pricing {
+  display: flex;
+  gap: 20px;
+  color: var(--gray-650);
+}
+
+/******** PRICE TOGGLER *********/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, var(--element-bg));
+  transition: background-color 0.4s ease;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 2.5px;
+  background-color: var(--blue-50);
+  transition: 0.4s ease;
+  border-radius: 50%;
+}
+
+input:checked + .slider:hover {
+  background-color: var(--red--400);
+}
+
+input:checked + .slider:before {
+  transform: translateX(19px);
+}
+
+/************ CARD ***************/
+main {
+  width: 100%;
+  display: grid;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.card,
+.basic-card,
+.professional-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px var(--gray-650);
+}
+
+.card,
+.basic-card {
+  background-color: white;
+}
+
+.professional-card {
+  background: linear-gradient(to bottom, var(--element-bg));
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+.card .card-content .card-title,
+.basic-card .card-content .card-title {
+  font-size: 0.8rem;
+  color: var(--gray-650);
+}
+
+.package-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.price,
+.basic-card .price {
+  font-size: 0.8rem;
+}
+
+.plan-details {
+  width: 100%;
+}
+
+.plan-details ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--gray-700);
+  padding: 10px;
+}
+
+.plan-details ul li:nth-child(1) {
+  border-top: 1px solid var(--gray-700);
+}
+
+/*************** BASIC & MASTER CARD ***************/
+
+.card .card-content .package-price,
+.basic-card .card-content .package-price {
+  font-size: 2.2rem;
+  color: var(--gray-700);
+}
+
+.card .plan-details ul,
+.basic-card .plan-details ul {
+  list-style-type: none;
+  display: grid;
+  color: var(--gray-650);
+}
+
+/*************** PROFESSIONAL CARD ***************/
+
+.professional-card .card-content {
+  color: var(--blue-50);
+}
+
+.professional-card .card-content .card-title {
+  font-size: 0.8rem;
+}
+
+.professional-card .card-content .package-price {
+  font-size: 2.2rem;
+}
+
+.professional-card .plan-details ul li {
+  border-bottom: 1px solid var(--blue-50);
+}
+
+.professional-card .plan-details ul li:nth-child(1) {
+  border-top: 1px solid var(--blue-50);
+}
+
+/************ BUTTON *******************/
+.cta {
+  font-family: var(--font-family);
+  font-weight: 700;
+  background: linear-gradient(to right, var(--element-bg));
+  border: none;
+  color: var(--blue-50);
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cta:hover {
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.8);
+}
+
+.professional-card .cta {
+  background: var(--blue-50);
+  color: hsl(238, 63%, 64%);
+}
+
+/************* BACKGROUND PATTERNS ****************/
+.top-bg {
+  position: fixed;
+  right: -20%;
+  top: -5%;
+  width: 250px;
+  z-index: -1;
+}
+
+.top-bg img {
+  width: 100%;
+}
+
+.bottom-bg {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    grid-template-columns: 250px 250px 250px;
+    grid-template-rows: 15px 315px 15px;
+    gap: 0;
+  }
+
+  .card,
+  .basic-card {
+    grid-row: 2 / 3;
+  }
+
+  .basic-card {
+    grid-column: 1 / 2;
+  }
+
+  .card {
+    grid-column: 3 / 4;
+  }
+
+  .card {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .basic-card {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .professional-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    box-shadow: 0px 5px 10px 0px var(--gray-650);
+    z-index: 1;
+  }
+
+  .top-bg {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    width: 250px;
+    z-index: -1;
+  }
+
+  .top-bg img {
+    width: 100%;
+  }
+
+  .bottom-bg {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    z-index: -1;
+  }
+
+  .bottom-bg img {
+    width: 100%;
+  }
+}
