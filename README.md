@@ -24,7 +24,6 @@ Users should be able to:
 
 - View the optimal layout for the component depending on their device's screen size
 - Control the toggle with both their mouse/trackpad and their keyboard
-- **Bonus**: Complete the challenge with just HTML and CSS
 
 ### Screenshot
 
@@ -32,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/WesSno/Pricing-Toggle-Component)
+- Live Site URL: [Netlify](https://kbk-pricing-toggle-component.netlify.app/)
 
 ## My process
 
