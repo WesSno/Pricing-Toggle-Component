@@ -196,12 +196,20 @@ main {
 }
 
 .cta:hover {
-  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.8);
+  outline: 1px solid var(--gray-650);
+  background: transparent;
+  color: hsl(238, 63%, 64%);
 }
 
 .professional-card .cta {
   background: var(--blue-50);
   color: hsl(238, 63%, 64%);
+}
+
+.professional-card .cta:hover {
+  outline: 1px solid white;
+  background: transparent;
+  color: white;
 }
 
 /************* BACKGROUND PATTERNS ****************/
